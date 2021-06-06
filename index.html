@@ -10,7 +10,32 @@
     
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <script src="./js/index.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<script type="text/javascript">
+(function() {
+emailjs.init("user_6KftbLgQg6ZJgDFcvpHKe");
+})();
+</script>
+
+<script>
+    window.onload = function() {
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // generate a five digit number for the contact_number variable
+        
+        // these IDs from the previous steps
+        emailjs.sendForm('service_nsodh38', 'template_a9rhgcl', this)
+            .then(function() {
+              alert("Sucessfully Send");
+              document.getElementById("contact-form").reset();
+            }, function(error) {
+                alert('FAILED...', error);
+            });
+    });
+}
+</script>
 
 
 </head>
@@ -18,7 +43,6 @@
     <div class="main-wrapper" >
 <div class="nav-bar"  id="navigation">
 
-   
     <div class="logo">
         <h1>
 
@@ -32,33 +56,35 @@
             <li><a href="#skills"> Skills</a></li>
             <li><a href="#contact-us">Contact</a> </li>
         </ul>
-        
-       
-    </div>
-    
-    <div class="ham-menu">
-        
-      <img src="./images/icons/hamburger-menu.svg " id="myBtn" alt="h">
-        <!-- <button >Open Modal</button> -->
-        <div id="myModal" class="modal">
 
-            <!-- Modal content -->
-            <div class="modal-content">
-              <span class="close">&times;</span>
-              <div class="ham-menu">
-                <ul class="list-items">
-                    <li class="list-itemm"><a class="ham-links" href=""> Home</a></li>
-                    <li class="list-itemm"><a class="ham-links"  href="#about">About</a> </li>
-                    <li class="list-itemm"><a class="ham-links" href="#skills"> Skills</a></li>
-                    <li class="list-itemm"><a class="ham-links" href="#contact-us">Contact</a> </li>
-                </ul>
-            </div>
-            </div>
-          
-          </div>
     </div>
+
+
+
 
 </div>
+
+<div class="ham-menu">
+        
+    <img src="./images/icons/hamburger-menu.svg " id="myBtn" alt="h">
+      <!-- <button >Open Modal</button> -->
+      <div id="myModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="ham-menu">
+              <ul class="list-items">
+                  <li class="list-itemm"><a class="ham-links" href=""> Home</a></li>
+                  <li class="list-itemm"><a class="ham-links"  href="#about">About</a> </li>
+                  <li class="list-itemm"><a class="ham-links" href="#skills"> Skills</a></li>
+                  <li class="list-itemm"><a class="ham-links" href="#contact-us">Contact</a> </li>
+              </ul>
+          </div>
+          </div>
+        
+        </div>
+  </div>
 <hr>
 <div class="hero-section">
  
@@ -207,12 +233,12 @@
             </h2>
         </div>
 <div class="form-wrapper">
-    <form action="" class="form-area">
+    <form action="" class="form-area" id="contact-form">
   
-        <input type="text" required class="input-area" placeholder="Your Name">
-        <input type="text" required class="input-area" placeholder="Your Name">
-        <textarea name="ccc"  required class="input-area" id="" placeholder= "Message "cols="30" rows="10"></textarea>
-        <button type="submit" class="form-btn" >Send Message</button>
+        <input type="text" required class="input-area" placeholder="Your Name" name="user_name">
+        <input type="email" required class="input-area" placeholder="Your Email" name="user_email">
+        <textarea  required class="input-area" id="" name="message" placeholder= "Message " cols="30" rows="10"></textarea>
+        <button type="submit"  class="form-btn" >Send Message</button>
     </form>
      
     <div class="contact-area">
