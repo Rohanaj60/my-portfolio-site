@@ -40,31 +40,36 @@ body {
 .main-wrapper {
   height: auto;
 
+
   max-width: 1290px;
   margin: 3rem auto;
+}
+.inner-menu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: white; */
+
+
+  height: 4rem;
 }
 .nav-bar {
   background-color: white;
   height: 3rem;
-
   position: sticky;
+
   top: 0px;
-  height: 4rem;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  /* display: flex; */
+  /* flex-direction: row wrap; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  /* border:2px solid red; */
 }
-
-.ham-menu {
-  display: inline;
+.list-items{
   display: none;
+}
 
-  width: 10%;
-}
-.ham-menu:hover {
-  cursor: pointer;
-}
 .list-items li {
   margin: 3rem;
   list-style: none;
@@ -74,9 +79,18 @@ body {
   color: black;
   text-decoration: none;
 }
-.ham-menu img {
-  width: 100%;
+.ham-menu1 img {
+  width: 50%;
+
+  /* border: 2px solid red; */
   vertical-align: center;
+}
+.ham-menu1{
+
+  /* border: 2px solid red; */
+  width:20%;
+  text-align: right;
+  display: none;
 }
 .nav-menu {
   width: 30%;
@@ -390,6 +404,7 @@ i {
   margin-top: 10rem;
   display: grid;
   grid-gap: 5rem;
+  background-color: white;
 
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
@@ -534,11 +549,35 @@ p {
     transition: 0.3s;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
   }
-
+  .ham-menu1:hover{
+    cursor: pointer;
+    
+    }
+    .list-items{
+      display: block;
+    
+    }
+    .ham-menu-wrapper{
+      position: absolute;
+      width: 100%;
+   
+    
+      
+    }
+    .ham-menu{
+     /* border: 2px solid red; */
+     
+      position: relative;
+      top:-64px;
+      left:0;
+      text-align: center;
+    }
   .nav-menu.active {
     left: 0;
   }
-
+.ham-menu1{
+  display: block;
+}
   .nav-item {
     margin: 2.5rem 0;
   }
@@ -559,30 +598,13 @@ p {
     transform: translateY(-8px) rotate(-45deg);
   }
   .ham-menu {
-    display: block;
-  }
-  .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 2rem; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    /* display: block; */
+    background-color: white;
   }
 
+
   /* Modal Content */
-  .modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-  }
+
 
   /* The Close Button */
   .close {
@@ -601,6 +623,7 @@ p {
   .ham-links {
 
     color: red;
+    font-size: 2rem;
   }
   .hero-image {
     width: 50%;
