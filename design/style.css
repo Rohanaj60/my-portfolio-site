@@ -560,13 +560,14 @@ p {
     .ham-menu-wrapper{
       position: absolute;
       width: 100%;
+ 
    
     
       
     }
     .ham-menu{
      /* border: 2px solid red; */
-     
+     display: none;
       position: relative;
       top:-64px;
       left:0;
